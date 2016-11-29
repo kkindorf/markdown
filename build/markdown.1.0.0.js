@@ -46,6 +46,8 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -60,28 +62,49 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var mark = (0, _marked2.default)("Hi!");
-	_marked2.default.setOptions({
-	  renderer: new _marked2.default.Renderer(),
-	  gfm: true,
-	  tables: true,
-	  breaks: false,
-	  pedantic: false,
-	  sanitize: false,
-	  smartLists: true,
-	  smartypants: false
-	});
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	var Hello = function Hello() {
-	  return _react2.default.createElement(
-	    'div',
-	    null,
-	    mark
-	  );
-	};
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Mark = function (_React$Component) {
+	  _inherits(Mark, _React$Component);
+	
+	  function Mark(props) {
+	    _classCallCheck(this, Mark);
+	
+	    var _this = _possibleConstructorReturn(this, (Mark.__proto__ || Object.getPrototypeOf(Mark)).call(this, props));
+	
+	    _this.state = { value: '# H1  ## H2  ### H3  #### H4  ##### H5  ###### H6  ' };
+	    _this.handleChange = _this.handleChange.bind(_this);
+	
+	    return _this;
+	  }
+	
+	  _createClass(Mark, [{
+	    key: 'handleChange',
+	    value: function handleChange(event) {
+	      console.log(event.target.value);
+	      this.setState({ value: event.target.value });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement('textarea', { className: 'form-control', rows: '30', value: this.state.value, onChange: this.handleChange }),
+	        _react2.default.createElement('div', { className: 'catcher', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(this.state.value) } })
+	      );
+	    }
+	  }]);
+	
+	  return Mark;
+	}(_react2.default.Component);
 	
 	document.addEventListener('DOMContentLoaded', function () {
-	  _reactDom2.default.render(_react2.default.createElement(Hello, null), document.getElementById('app'));
+	  _reactDom2.default.render(_react2.default.createElement(Mark, null), document.getElementById('app'));
 	});
 
 /***/ },

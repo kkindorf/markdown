@@ -1,23 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import marked from 'marked';
-let mark = marked("Hi!");
-marked.setOptions({
-  renderer: new marked.Renderer(),
-  gfm: true,
-  tables: true,
-  breaks: false,
-  pedantic: false,
-  sanitize: false,
-  smartLists: true,
-  smartypants: false
-});
 
-const Hello = () => {
-  return <div>{mark}</div>;
+class Mark extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {value: '# H1  ## H2  ### H3  #### H4  ##### H5  ###### H6  '};
+    this.handleChange = this.handleChange.bind(this);
+    
+  };
+  handleChange (event){
+    console.log(event.target.value);
+    this.setState({value: event.target.value});
+    
+  }
+ render(){
+  return ( 
+        <div>
+        <textarea className="form-control" rows="30" value={this.state.value} onChange={this.handleChange}></textarea>
+          <div className="catcher" dangerouslySetInnerHTML={{ __html:  marked(this.state.value) }}></div>
+        </div>
+        
+        );
+    }
+ }
 
-}
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<Hello/>, document.getElementById('app'));
+  ReactDOM.render(<Mark/>, document.getElementById('app'));
 })
