@@ -1,0 +1,30 @@
+{
+  "name": "markdown",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mkdir": "mkdir -p build",
+    "clean": "rm -rf build",
+    "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:css && npm run build:js",
+    "watch": "npm run watch:html & npm run watch:css",
+    "build:html": "npm run clean:html && cp index.html build/",
+    "build:css": "npm run clean:css && lessc --source-map css/index.less build/$npm_package_name.$npm_package_version.css",
+    "watch:css": "npm run build:css && chokidar 'css/**/*.less' -c 'npm run build:css'",
+    "clean:css": "rm -f build/$npm_package_name.$npm_package_version.css build/$npm_package_name.$npm_package_version.css.map",
+    "clean:html": "rm -f buid/index.html",
+    "build:js": "npm run clean:js && webpack",
+    "watch:js": "npm run build:js && webpack --watch",
+    "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "less": "^2.7.1"
+  },
+  "dependencies": {
+    "marked": "^0.3.6"
+  }
+}
