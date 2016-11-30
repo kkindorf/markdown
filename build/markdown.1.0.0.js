@@ -76,16 +76,14 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Mark.__proto__ || Object.getPrototypeOf(Mark)).call(this, props));
 	
-	    _this.state = { value: '# H1  ## H2  ### H3  #### H4  ##### H5  ###### H6  ' };
+	    _this.state = { value: '# H1\n## H2\n### H3\n#### H4\n ~~strikethrough~~\n' };
 	    _this.handleChange = _this.handleChange.bind(_this);
-	
 	    return _this;
 	  }
 	
 	  _createClass(Mark, [{
 	    key: 'handleChange',
 	    value: function handleChange(event) {
-	      console.log(event.target.value);
 	      this.setState({ value: event.target.value });
 	    }
 	  }, {
