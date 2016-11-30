@@ -76,7 +76,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Mark.__proto__ || Object.getPrototypeOf(Mark)).call(this, props));
 	
-	    _this.state = { value: '# H1\n## H2\n### H3\n#### H4\n ~~strikethrough~~\n' };
+	    _this.state = { value: '# H1\n## H2\n### H3\n\n#### H4\n\n~~strikethrough~~\n\n*a whole lot of emphasis*\n**even more emphasis**\n# this an unordered list\n+  candy\n+  pizza\n+  lobster\n## this is an ordered list\n 1.  2\n 2.  3' };
 	    _this.handleChange = _this.handleChange.bind(_this);
 	    return _this;
 	  }
