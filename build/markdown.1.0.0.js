@@ -92,7 +92,7 @@
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('textarea', { className: 'form-control', rows: '30', value: this.state.value, onChange: this.handleChange }),
+	        _react2.default.createElement('textarea', { className: 'form-control markdown', rows: '30', value: this.state.value, onChange: this.handleChange }),
 	        _react2.default.createElement('div', { className: 'catcher', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(this.state.value) } })
 	      );
 	    }

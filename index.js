@@ -14,7 +14,7 @@ class Mark extends React.Component {
  render(){
   return (
         <div>
-        <textarea className="form-control" rows="30" value={this.state.value} onChange={this.handleChange}></textarea>
+        <textarea className="form-control markdown" rows="30" value={this.state.value} onChange={this.handleChange}></textarea>
           <div className="catcher" dangerouslySetInnerHTML={{ __html:  marked(this.state.value) }}></div>
         </div>
 

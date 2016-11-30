@@ -1,3 +1,26 @@
+@text-color: #628e4b;
+@display-inline: inline-block;
+@margin-left: 30px;
+@textarea-width: 50%;
+@font-size: 1.5em;
+
+
 body{
-    color: yellow;
+    color: @text-color;
+    font-size: 16px;
+}
+
+.markdown, .catcher{
+    display: @display-inline;
+}
+textarea{
+    max-width: @textarea-width;
+    font-size: @font-size;
+}
+.catcher {
+    top: 0;
+    margin-left: @margin-left;
+    max-width: @textarea-width -10;
+    font-size: @font-size;
+    position: absolute;
 }
