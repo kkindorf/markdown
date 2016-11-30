@@ -76,7 +76,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Mark.__proto__ || Object.getPrototypeOf(Mark)).call(this, props));
 	
-	    _this.state = { value: '# H1  ## H2  ### H3  #### H4  ##### H5  ###### H6  ' };
+	    _this.state = { value: ['# H1', '## H2', '### H3'] };
 	    _this.handleChange = _this.handleChange.bind(_this);
 	
 	    return _this;
@@ -91,10 +91,13 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	
 	      return _react2.default.createElement(
 	        'div',
 	        null,
-	        _react2.default.createElement('textarea', { className: 'form-control', rows: '30', value: this.state.value, onChange: this.handleChange }),
+	        _react2.default.createElement('textarea', { className: 'form-control', rows: '30', value: this.state.value.map(function (markType) {
+	            return markType;
+	          }), onChange: this.handleChange }),
 	        _react2.default.createElement('div', { className: 'catcher', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(this.state.value) } })
 	      );
 	    }
