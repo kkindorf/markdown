@@ -76,7 +76,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (Mark.__proto__ || Object.getPrototypeOf(Mark)).call(this, props));
 	
-	    _this.state = { value: '# H1\n## H2\n### H3\n\n#### H4\n\n~~strikethrough~~\n\n*a whole lot of emphasis*\n**even more emphasis**\n# this an unordered list\n+  candy\n+  pizza\n+  lobster\n## this is an ordered list\n 1.  2\n 2.  3' };
+	    _this.state = { value: "## Hi I'm [Kevin][Kevin]. \n### This is a markdown previewer\n\n[Kevin]: https://kkindorf.github.io/ \n\n# H1\n\n## H2\n\n### H3\n\n#### H4\n\n~~strikethrough~~\n\n*a whole lot of emphasis*\n\n**even more emphasis**\n\n# this an unordered list\n+  candy\n+  pizza\n+  lobster\n\n## this is an ordered list\n 1.  2\n 2.  3\n\n" };
 	    _this.handleChange = _this.handleChange.bind(_this);
 	    return _this;
 	  }
@@ -91,9 +91,17 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        null,
-	        _react2.default.createElement('textarea', { className: 'form-control markdown', rows: '30', value: this.state.value, onChange: this.handleChange }),
-	        _react2.default.createElement('div', { className: 'catcher', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(this.state.value) } })
+	        { className: 'container-fluid' },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'wrapper' },
+	            _react2.default.createElement('textarea', { className: 'form-control markdown', rows: '28', value: this.state.value, onChange: this.handleChange }),
+	            _react2.default.createElement('div', { className: 'catcher', dangerouslySetInnerHTML: { __html: (0, _marked2.default)(this.state.value) } })
+	          )
+	        )
 	      );
 	    }
 	  }]);

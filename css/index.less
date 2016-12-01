@@ -1,26 +1,31 @@
-@text-color: #628e4b;
+@text-color: #66152c;
 @display-inline: inline-block;
 @margin-left: 30px;
-@textarea-width: 50%;
-@font-size: 1.5em;
-
+@textarea-width: 55%;
+@margin-auto: auto;
 
 body{
     color: @text-color;
-    font-size: 16px;
 }
-
-.markdown, .catcher{
+.wrapper{
+  max-width: 850px;
+  margin: auto;
+}
+.markdown{
+    top: 0;
+    width: @textarea-width;
     display: @display-inline;
-}
-textarea{
-    max-width: @textarea-width;
-    font-size: @font-size;
+    @media (max-width: 400px) {
+      @textarea-width: 95%;
+    width: @textarea-width;
+    display: block;
+    }
 }
 .catcher {
-    top: 0;
+    display: @display-inline;
     margin-left: @margin-left;
-    max-width: @textarea-width -10;
-    font-size: @font-size;
-    position: absolute;
+    @media (max-width: 400px) {
+    width: 95%;
+    display: block;
+    }
 }

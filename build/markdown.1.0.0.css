@@ -1,0 +1,29 @@
+body {
+  color: #66152c;
+}
+.wrapper {
+  max-width: 850px;
+  margin: auto;
+}
+.markdown {
+  top: 0;
+  width: 55%;
+  display: inline-block;
+}
+@media (max-width: 400px) {
+  .markdown {
+    width: 95%;
+    display: block;
+  }
+}
+.catcher {
+  display: inline-block;
+  margin-left: 30px;
+}
+@media (max-width: 400px) {
+  .catcher {
+    width: 95%;
+    display: block;
+  }
+}
+/*# sourceMappingURL=markdown.1.0.0.css.map */
