@@ -4,7 +4,7 @@ A markdown previewer built with React
 I created this project as part of Freecodecamp's data visualization certificate. It's a pretty simple application that uses React's dangerouslySetInnerHTML function 
 and the [Marked](https://www.npmjs.com/package/marked) mardkown parser library.
 
-So how the application works: 
+How the application works: 
 
 I'm using the state object in a single React component to store the initial set of markdown content as a single string. Once the component renders,
 that string's value is being added into a textarea field' inside the component and the state is then being compiled by the Marked library into HTML. The compiled HTML is then passed
