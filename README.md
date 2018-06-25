@@ -2,7 +2,7 @@
 A markdown previewer built with React
 
 I created this project as part of Freecodecamp's data visualization certificate. It's a pretty simple application that uses React's dangerouslySetInnerHTML function 
-and the [Marked](https://www.npmjs.com/package/marked) mardkown parser library.
+and the [Marked](https://www.npmjs.com/package/marked) markdown parser library.
 
 How the application works: 
 
