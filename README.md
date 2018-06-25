@@ -12,5 +12,5 @@ to the dangerouslySetInnerHTML function. Once the html is transferred to the dan
 is shown. 
 
 If a user starts typing markdown in the textarea field, that text and it's formatting automatically turns into HTML because the onChange function just keeps adding the markdown directly to the component's state, resulting in a very nice
-instant update of the html!
+instant update of the application.
 
